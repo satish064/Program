@@ -1,5 +1,13 @@
 #include<stdio.h>
+int rserires(int);
 int main(){
-    printf("HEllO World");
+    int n;
+    printf("Enter a number: ");
+    scanf("%d",&n);
+    summation(n);
     return 0;
+}
+int summation(int n)
+{
+   
 }
