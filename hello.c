@@ -1,21 +1,15 @@
 #include<stdio.h>
+#define SIZE 10
 int main()
 {
-   int n,i,j,min,a,b;
-   printf("Eneter a number: ");
-   scanf("%d",&n);
-   for(i=1;i<=2*n-1;i++)
+   int arr[10] = {1,2,3,4,5,6,7,8,9,10},i,j,temp;
+   for(i=0,j=9;i<j;j--,i++)
    {
-      min = 0;
-      for(j=1;j<=2*n-1;j++)
-      {
-         a = i;
-         if(i>n) a = 2*n - i;
-         b = j;
-         if(j>n) b = 2*n - j;
-         if(a<b) min = a;
-         else min = b;
-         printf("%d",n+1-min);
-      } printf("\n");
-   }return 0;
+      temp = arr[i];
+      arr[i] = arr[j];
+      arr[j] = temp;
+   }
+   for(i=0;i<10;i++)
+   printf("%d ",arr[i]);
+   return 0;
 }
