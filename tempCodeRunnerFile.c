@@ -1,1 +1,93 @@
-a
+#include<stdio.h>
+#define SIZE 5
+int stack[SIZE];
+int top = -1;
+void pop();
+void push();
+int isFull();
+int isEmpty();
+void traversal();
+int main()
+{
+    int ch;
+    while(1)
+    {
+    printf("Enter 1 for Push element : \n");
+    printf("Enter 2 for pop element : \n");
+    printf("Enter 3 for traversal : \n");
+    printf("Enter 4 for exit\n");
+    printf("Enter a choice : ");
+    scanf("%d",&ch);
+    switch(ch)
+    {
+        case 1 :
+        push();
+        break;
+        case 2 :
+        pop();
+        break;
+        case 3 :
+        traversal();
+        break;
+        case 4 :
+        printf("Thanks You");
+        break;
+        default :
+        printf("Invalid Case");
+        break;
+    }
+    }
+    return 0;
+}
+int isFull()
+{
+    if(top == SIZE - 1)
+    return 1;
+    else
+    return 0;
+}
+int isEmpty()
+{
+    if(top == -1)
+    return 1;
+    else return 0;
+}
+void push()
+{
+    if(isFull())
+    {
+       printf("Stack is full\n");
+    }
+    else
+    {
+         top++;
+        printf("Enter a stack data : \n");
+        scanf("%d",&stack[top]);
+        printf("data is pushed into stack\n");
+    }
+    
+}
+void pop()
+{
+    if(isEmpty())
+    {
+       printf("Stack is empty\n");
+    }
+    else 
+    {
+         printf("pop data is=%d\n",stack[top]);
+        top--;
+    }
+}
+void traversal()
+{
+    if(isEmpty())
+    {
+        printf("Stack is Empty\n");
+    }
+    else
+    {
+        for(int i = top;i>=0;i--)
+        printf("%d\t\n",stack[i]);
+    }
+}
